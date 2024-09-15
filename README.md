@@ -35,6 +35,8 @@ There are many nuances for implementing this process in your code. This code doe
 
 My prompt has been engineered slightly but I believe it has LOTS of room for improvement as I haven't studied every driver's license standard. I strongly believe any potential flaws can be ironed out easily.
 
+I also think this project would greatly benefit from a retry system. For sake of costs I won't implement that here.
+
 ### Extra latency when changing the schema
 
 When changing the schema or OpenAI key, the first initial run will take extra time as the AI processes the new schema. Every run after should take less time, should be more consistent, and correlating with the file size of the uploaded image. 
