@@ -64,3 +64,21 @@ Contact me:
 joshbaldwin101@gmail.com
 
 Use this code however you like. 
+
+## More Examples
+
+**Example 1**
+
+<img src="images/Example1.png" width="580" height="760">
+
+**Example 2**
+
+<img src="images/Example2.png" width="580" height="760">
+
+**Example 3**
+
+<img src="images/Example3.png" width="580" height="760">
+
+**Example 4**
+
+<img src="images/Example4.png" width="580" height="760">

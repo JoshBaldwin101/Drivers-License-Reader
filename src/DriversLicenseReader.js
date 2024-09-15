@@ -14,7 +14,7 @@ const openai = new OpenAI({
 const systemPrompt = `You are a Driver's License scanner API. All images are uploaded voluntarily for data entry. You will read in a photo of a driver's license and record the following data:
 - drivers_license_number: A mix of alphanumeric characters. Some licenses do not include letters. If letters are included, they are typically at the start and are capitalized.
 - first_name: The first name written on the driver's license designated by "FN". This will typically also include the middle name. If this is the case, exclude the middle name from the first_name field.
-- middle_name: If the person has a middle name it will be appended to their first name near "FN". Ensure that the middle name is not an extension of their first name. If there is no middle name, please put "N/A"
+- middle_name: If the person has a middle name it will be appended (separated by a space) to their first name near "FN". Ensure that the middle name is not an extension of their first name via a dash. If there is no middle name, please put "N/A". There is typically a middle name.
 - last_name: The last name written on the driver's license designated by "LN".
 - address: The stated address on the driver's license.
 - date_of_birth: The person's date of birth designated by "D.O.B" or "DOB"
@@ -147,8 +147,8 @@ async function encodeImageAsBase64(imagePath) {
 }
 
 // Test code!
-const exampleDriversLicenseURI =
-  "https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg"; // Change this to test different driver's licenses
+const exampleDriversLicenseURI = "https://www.jsonline.com/gcdn/-mm-/2f3e2286b1f5ae873c26d3f6d9fcaeb663199d00/c=0-43-1393-830/local/-/media/2017/11/21/WIGroup/Milwaukee/636468858661208331-MJS-LICENSE.jpg";
+  //"https://upload.wikimedia.org/wikipedia/commons/7/79/Californian_sample_driver%27s_license%2C_c._2019.jpg"; // Change this to test different driver's licenses
 /** Other URIs for driver's licenses:
  * New York: https://redbus2us.com/wp-content/uploads/2010/05/Requirements-to-get-driving-license-for-H4-Visa-holders-No-SSN.jpg
  * California: https://www.dmv.ca.gov/portal/uploads/2020/06/fed_noncompliant_img-1024x657.jpg
